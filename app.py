@@ -26,7 +26,7 @@ def generate(lang, text):
 
     tts.save(STORAGE_DIR+filename)
     sound = AudioSegment.from_file(STORAGE_DIR+filename, format='mp3')
-    sound = sound.apply_gain(+5.0)
+    sound = sound.apply_gain(+8.0)
     sound.export(STORAGE_DIR+filename,
                  format="mp3",
                  bitrate="48k",
