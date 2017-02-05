@@ -7,13 +7,18 @@ import logging
 from gtts import gTTS
 from pydub import AudioSegment
 import hashlib
-from urllib.parse import unquote_plus
+try:
+    from urllib.parse import unquote_plus
+except:
+    from urllib import unquote_plus
+
 config = Config()
 
 app = Flask(__name__)
 logging.getLogger('flask_tts').setLevel(logging.DEBUG)
 
 STORAGE_DIR = os.environ['STORAGE_DIR']
+
 
 @app.route('/generate/<lang>/<text>')
 def generate(lang, text):
