@@ -7,7 +7,7 @@ import logging
 from gtts import gTTS
 from pydub import AudioSegment
 import hashlib
-from urllib import unquote_plus
+from urllib.parse import unquote_plus
 config = Config()
 
 app = Flask(__name__)
